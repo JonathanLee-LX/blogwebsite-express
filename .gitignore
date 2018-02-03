@@ -7,3 +7,4 @@ app_old.js
 package-lock.json
 webpack/
 bin/
+.vscode/
