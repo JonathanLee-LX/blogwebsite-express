@@ -1,0 +1,108 @@
+{{#section 'home-css'}}
+<link rel="stylesheet" type="text/css" href="/static/style/home-view.css">
+<link rel="stylesheet" type="text/css" href="/static/style/card.css"> 
+{{/section}}
+<div class="container full-page">
+  <div class="carousel slide" data-ride="carousel" id="carousel-example-generic">
+    <!--Indicators-->
+    <ol class="carousel-indicators">
+      <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+      <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+      <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+      <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+      <li data-target="#carousel-example-generic" data-slide-to="4"></li>
+      <li data-target="#carousel-example-generic" data-slide-to="5"></li>
+      <li data-target="#carousel-example-generic" data-slide-to="6"></li>
+      <li data-target="#carousel-example-generic" data-slide-to="7"></li>
+    </ol>
+    <!--Wrapper for slides-->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <a href="">
+          <img src="/static/image/1.jpg" alt="moutain">
+        </a>
+        <div class="carousel-caption">
+          <p>Moutain on sun set.</p>
+        </div>
+      </div>
+      <div class="item">
+        <a href="">
+          <img src="/static/image/2.jpg" alt="village">
+        </a>
+        <div class="carousel-caption">
+          <p>Quiet village.</p>
+        </div>
+      </div>
+      <div class="item">
+        <a href="">
+          <img src="/static/image/3.jpg" alt="Beauty">
+        </a>
+        <div class="carousel-caption">
+          <p>Beauty by seaside.</p>
+        </div>
+      </div>
+      <div class="item">
+        <a href="">
+          <img src="/static/image/4.jpg" alt="moon">
+        </a>
+        <div class="carousel-caption">
+          <p>Moon</p>
+        </div>
+      </div>
+      <div class="item">
+        <a href="">
+          <img src="/static/image/5.jpg" alt="genji">
+        </a>
+        <div class="carousel-caption">
+          <p>源氏拔刀</p>
+        </div>
+      </div>
+      <div class="item">
+        <a href="">
+          <img src="/static/image/6.jpg" alt="genji">
+        </a>
+        <div class="carousel-caption">
+          <p>源氏飞镖</p>
+        </div>
+      </div>
+      <div class="item">
+        <a href="">
+          <img src="/static/image/7.jpg" alt="genji">
+        </a>
+        <div class="carousel-caption">
+          <p>源氏</p>
+        </div>
+      </div>
+      <div class="item">
+        <a href="">
+          <img src="/static/image/8.jpg" alt="lux">
+        </a>
+        <div class="carousel-caption">
+          <p>大元素师拉克丝</p>
+        </div>
+      </div>
+    </div>
+    <a href="#carousel-example-generic" role="button" class="left carousel-control" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a href="#carousel-example-generic" role="button" class="right carousel-control" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="card-area col-md-9" id="article-list">
+      {{!-- card加载后存放在此 --}}
+   </div>
+  </div>
+   <a class="btn btn-primary btn-block load-more" role="button" href="javascript:void(0)">更多</a>
+</div>
+
+{{#section 'home-js'}}
+<script type="text/javascript" src="/static/js/slide.js"></script>
+<script type="text/javascript" src="/static/js/load-more.js"></script>
+<script type="text/javascript" src="/static/js/article-controller.js"></script> 
+{{/section}}

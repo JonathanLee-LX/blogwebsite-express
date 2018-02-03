@@ -1,0 +1,11 @@
+.article-container{
+    margin-top: 30px;
+}
+
+.isfixed{
+    position: fixed;
+    top:80px;
+    z-index: 99999;
+    border-bottom: 1px solid #ccc;
+    background-color: #fff;
+}

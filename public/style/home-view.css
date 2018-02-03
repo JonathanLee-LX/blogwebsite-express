@@ -1,0 +1,20 @@
+ .full-page {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+} 
+.card-area{
+	margin-top: 30px;
+}
+
+.load-more{
+	display: block;
+	border-radius: 40px;
+  margin-bottom: 20px;
+}
+.board a>img{
+	float: right;
+	display: block;
+	width: 70%;
+	margin-bottom: 10px;
+}

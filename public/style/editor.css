@@ -1,0 +1,57 @@
+.editor{
+  margin-top: 20px;
+}
+
+.toolbar{
+    font-size: 1.5em;
+    color: #333;
+    background-color: #fff;
+}
+
+.text{
+    min-height: 400px;
+    margin-bottom: 20px;
+    overflow-y: hidden;
+    background-color: #fff;
+    line-height: 1.3em;
+}
+.text .w-e-text{
+    overflow-y: visible;
+}
+
+.article-container{
+    margin-top: 30px;
+}
+
+.isfixed{
+    position: fixed;
+    top:55px;
+    z-index: 99999;
+    background-color: #fff;
+    box-shadow: 1px 2px 2px 3px #ccc;
+    border-radius: 5px;
+}
+
+#sub-btn{
+    background-color: rgb(46, 128, 236);
+    color:#fff;
+    width: 80px;
+    height: 80px;
+    border: 1px solid rgb(73, 164, 223);
+    border-radius: 40px;
+    font-size:1.3em;
+    position: fixed;
+    bottom: 80px;
+    right: 40px;
+}
+
+button:hover{
+    filter: brightness(0.8);
+}
+
+// 把表情，图片链接，表格等面板设置为固定定位
+.fixed-panel{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+}

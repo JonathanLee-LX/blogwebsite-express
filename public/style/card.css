@@ -1,0 +1,89 @@
+
+.card{
+    border: 1px solid rgb(230, 230, 230);
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(26, 26, 26, .1);
+    padding: 10px;
+    margin: 10px 0;
+    box-sizing: border-box;
+    background-color: white;
+}
+
+.author {
+  /* width: 100%; */
+  height: 30px;
+  /* background-color: rgba(178, 182, 180, 0.3); */
+}
+
+.avatar {
+  display: inline-block;
+  vertical-align: middle;
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.avatar img {
+  height: 100%;
+}
+
+.nickname {
+
+}
+
+.abstract {
+  min-height: 50px;
+  display: flex;
+  box-sizing: border-box;
+}
+
+.title {
+  margin: 0;
+}
+
+.content {
+  font-size: 14px;
+  line-height: 1.8;
+  max-height: 9;
+  padding: 5px;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.preview {
+  overflow: hidden;
+  box-sizing: border-box;
+  margin: 10px;
+}
+
+.preview img {
+  width: 100%;
+  height: auto;
+
+}
+
+.meta {
+  height: 30px;
+  box-sizing: border-box;
+  /* background-color: bisque; */
+  font-size: 1.3em;
+}
+
+.meta .tag {
+  display: inline-block;
+  /* border: 1px solid tomato;
+  border-radius: 3px; */
+  padding: 1px 3px;
+  margin-right: 10px;
+}
+.badge{
+  background-color: transparent;
+  color: inherit;
+}
+.tag:hover{
+  color: rgb(0, 64, 64);
+}

@@ -1,0 +1,55 @@
+{{#section 'register-css'}}
+    <link rel="stylesheet" style="text/css" href="/static/style/register.css">
+{{/section}}
+
+<div class="bg">
+</div>
+
+<div class="container row register-page">
+    <div class="register-area col-md-6 col-md-offset-3">
+        <!--
+        <a class="close-icon glyphicon glyphicon-remove"></a>
+        -->
+        <div class="title">
+            <h3>账号注册</h3>
+        </div>
+        <form action="/register" method="POST">
+            <div class="form-group  has-feedback row name">
+                <label class="control-label sr-only " for="username">用户名</label>
+                    <div class="col-md-12 ">
+                        <input type="text" id="username" placeholder="请输入用户名" name="username" class="form-control input-lg " autocomplete="off">
+                        <span class="glyphicon form-control-feedback" aria-hidden="true" style="right:10px;"></span>
+                        <span class=" check-info"></span>
+                    </div>
+            </div>
+
+            <div class="form-group  has-feedback row psw" >
+                <label class="control-label sr-only " for="password">密码</label>
+                <div class="col-md-12 ">
+                    <input type="password" id="password" placeholder="请输入密码" name="password" class="form-control input-lg" autocomplete="off">
+                    <span class="glyphicon  form-control-feedback" aria-hidden="true" style="right:10px;"></span>
+                    <span class=" check-info"></span>
+                </div>
+            </div>
+
+            <div class="form-group  has-feedback row re-psw">
+                <label class="control-label sr-only " for="password">再次确认密码</label>
+                <div class="col-md-12 ">
+                    <input type="password" id="re-password" placeholder="请再次输入密码" name="re-password" class="form-control input-lg" autocomplete="off">
+                    <span class="glyphicon  form-control-feedback" aria-hidden="true" style="right:10px;"></span>
+                    <span class=" check-info"></span>
+                </div>
+            </div>
+            <button type=" submit" class="btn btn-primary btn-block" id='register' value="注册">注册</button>
+        </form>
+        <div class="help-list">
+                <a href="/login" class="item">已有账号？直接登录！</a><span class="item dotted">|</span>
+                <a href="/help" class="item">注册失败？</a><span class="item dotted">|</span>
+                <a href="/suggestion" class="item">意见反馈</a>
+        </div>
+    </div>
+</div>
+
+{{#section 'register-js'}}
+    <script type="text/javascript" src="/static/js/register.js"></script>
+{{/section}}

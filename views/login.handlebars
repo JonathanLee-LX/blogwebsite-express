@@ -1,0 +1,56 @@
+
+{{#section 'login-css'}}
+<link rel="stylesheet" style="text/css" href='/static/style/login-page.css' />
+<link rel="stylesheet" style="text/css" href="/static/style/loading.css"
+{{/section}}
+
+<div class="bg">
+</div>
+
+<div class="container row login-page">
+    <div class=" login-area col-md-6 col-md-offset-3" >
+        <!--
+        <a class="close-icon glyphicon glyphicon-remove"></a>
+    -->
+        <div class="title">
+            <h3>账号密码登录</h3>
+        </div>
+        <form action='/login' method="POST" >
+            <div class="form-group row name ">
+                <label for="username" class="control-label sr-only">用户名：</label>
+                <div class="col-md-12">
+                    <input type="text" id="username" placeholder="请输入用户名" name="username" class="form-control ">
+                </div>
+            </div>
+            <div class="form-group row psw">
+                <label for="password" class="control-label sr-only">密码</label>
+                <div class="col-md-12">
+                    <input type="password" id="password" placeholder="请输入密码" name="password" class="form-control">
+                </div>
+            </div>
+            <div class="sub-btn">
+                <button type="submit" class="btn btn-primary btn-block" id='login-btn' value="登录">登录</button>
+            </div>
+            <hr>
+            <div class="info">
+                <span></span>
+            </div>
+        </form>
+        {{!-- <div class="loading">
+            <div id="loading-center-absolute">
+				<div class="object" id="object_one"></div>
+				<div class="object" id="object_two"></div>
+		        <div class="object" id="object_three"></div>
+		    </div>
+        </div> --}}
+        <div class="help-list">
+                <a href="/forget" class="item">忘了密码</a><span class="item dotted">|</span>
+                <a href="/register" class="item">注册新账号</a><span class="item dotted">|</span>
+                <a href="/suggestion" class="item">意见反馈</a>
+        </div>
+    </div>
+</div>
+
+{{#section 'login-js'}}
+<script type="text/javascript" src="/static/js/login.js"></script>
+{{/section}}

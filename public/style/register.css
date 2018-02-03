@@ -1,0 +1,61 @@
+html, body{
+    height:100%;
+}
+
+.bg{
+    width: 100%;
+    height: 100%;
+    background-image: url(../image/1.jpg);
+    background-size: cover;
+}
+.error{
+    color: rgb(209, 15, 26);
+}
+
+.register-page{
+    position: fixed;
+    top: 0px;
+    left: 0;
+    z-index: 999;
+    background: rgba(0, 0, 0, 0.3);
+    width:100%;
+    height: 100%;
+    padding: 0px;
+    margin:0px;
+}
+
+.register-area{
+    position:relative;
+    top: 10%;
+    height: 60%;
+    padding:20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 3px 3px 3px #333;
+}
+
+.help-list{
+    position:absolute;
+    left:10px;
+    bottom:10px;
+}
+
+.help-list .item{
+    float:left;
+}
+
+.dotted{
+    margin: 0 5px;
+}
+
+.close-icon{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+    color: #000;
+}
+
+.close-icon:hover{
+    text-decoration: none;
+}

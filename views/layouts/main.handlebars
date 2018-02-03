@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta name="theme-color" content="#ea6f5a">
+	<title>写文章</title>
+	<link rel="stylesheet" type="text/css" href="/static/style/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="/static/style/main-layout.css">
+	<!---->
+		{{{_sections.home-css}}}
+		{{{_sections.login-css}}}
+		{{{_sections.register-css}}}
+		{{{_sections.submit-article-css}}}
+		{{{_sections.article-css}}}
+	<!---->
+</head>
+<body>
+	<nav class="navbar navbar-default" id="my-nav">
+	    <div class="container-fluid">
+	        <div class="navbar-header">
+	            <a href="/" class="navbar-brand"><img src="/static/image/jlx.png" alt="brand"></a>
+	        </div>
+	        <ul class="nav navbar-nav navbar-right" >
+	            <li><a href="/write"><span class="glyphicon glyphicon-edit"></span> 写点什么</a></li>
+	            <li><a href="/login"><span class="glyphicon glyphicon-home"></span> 登录</a></li>
+	            <li><a href="/register"><span class="glyphicon glyphicon-list-alt"></span> 注册</a></li>
+	        </ul>
+	    </div>
+	</nav>
+
+	{{{body}}}
+
+	<footer class="footer">
+			<div class="container-fluid">
+	    	<div class="row">
+	        	<div class="col-md-1">
+	            	<a href="#">
+	                	<img src="/static/image/jlx.png" alt="icon" class="my-brand-icon">
+	            	</a>
+	        	</div>
+	        	<div class="col-md-10 ">
+	            	<div class="row">
+	                	<ul>
+	                    	<li><a href="#">关于我</a></li>
+	                    	<li><a href="#">联系我</a></li>
+	                	</ul>
+	            	</div>
+	            	<div class="row icp">
+	                <ul>
+	                    <li><a href="#">@2017- JonathanLee</a></li><li>/</li>
+	                    <li><a href="#">湘ICP备17021924号-1</a></li><li>/</li>
+	                    <li><a href="#">web学习之路</a></li><li>/</li>
+	                	</ul>
+	            	</div>
+	        	</div>
+	    	</div>
+		</div>
+	</footer>
+
+	<script type="text/javascript" src="/static/js/jquery-3.1.1.js"></script>
+	<script type="text/javascript" src="/static/js/bootstrap.js"></script>
+	<script type="text/javascript" src="/static/js/navbar.js"></script>
+
+	{{{_sections.home-js}}}
+	{{{_sections.login-js}}}
+	{{{_sections.register-js}}}
+
+</body>
+</html>

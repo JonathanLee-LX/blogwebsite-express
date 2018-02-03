@@ -1,0 +1,41 @@
+{{!-- 这个模板是用来渲染需要往客户端发送的文章概要数据 --}} 
+{{#each abstracts }}
+<div class="card row">
+  <div class="author">
+    <a href="javascript:void(0)" class="avatar">
+      <img src="static/image/1_circle.jpg" alt="avatar" class="img-circle">
+    </a>
+    <a href="" class="nickname">{{author}}</a>
+    <span class="time">
+      <small>{{time}}</small>
+    </span>
+  </div>
+  <div class="abstract">
+    <div class="content col-md-9 col-xs-9">
+      <h3 class="title">
+        <a href={{path}} class="link">
+          <strong>{{{title}}}</strong>
+        </a>
+      </h3>
+      <p>{{{body}}}</p>
+    </div>
+    {{#if img}}
+    <div class="preview col-md-3 col-xs-3">
+      <a href="#" >
+      {{{img}}}
+      </a>
+    </div>
+    {{/if}}
+  </div>
+  <div class="meta">
+    <a href={{praise.path}} class="tag praise">
+      <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
+      <span class="badge">{{praise.count}}</span>
+    </a>
+    <a href="javascript:void(0)" class="tag comment">
+      <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
+      <span class="badge">{{comments}}</span>
+    </a>
+  </div>
+</div>
+{{/each}}

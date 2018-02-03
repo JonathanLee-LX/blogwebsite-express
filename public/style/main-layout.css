@@ -1,0 +1,50 @@
+/*	主页的默认布局的css配置选项
+   包括顶部导航栏和底部的信息栏 */
+
+body{
+	 background-color: #f6f6f6;
+	border: 1px solid #ccc;
+}
+p{
+	text-align: justify;
+}
+ul{
+	padding: 0;
+	list-style: none;
+}
+
+img{
+	height: 100%;
+}
+.navbar-fixed-top{
+	border-bottom: 1px solid #ccc;
+	box-shadow: 1px 1px 1px #f3f3f3;
+	z-index: 99999;
+}
+hr{
+	margin-top: 5px;
+}
+
+a:hover{
+	text-decoration: none;
+	color: teal;
+}
+
+.navbar-brand img{
+    width:40px;
+}
+navbar-header{
+    width:50%;
+}
+.my-brand-icon{
+	width: 100%;
+}
+
+.footer{
+  background-color: #fff;
+  padding: 10px;
+}
+.footer li{
+	float: left;
+	margin-left: 10px;
+}

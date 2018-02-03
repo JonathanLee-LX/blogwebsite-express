@@ -1,0 +1,23 @@
+{{#section 'submit-article-css'}}
+<link rel="stylesheet" type="text/css" href="/static/style/editor.css" /> {{/section}}
+<div class="container article-container">
+    <form action="/receiveArticle" method="POST" class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <div>
+                <input type="text" name="title" placeholder="请输入标题" class="form-control input-lg " id="article-title" style="border:none;">
+            </div>
+            <div>
+                <textarea rows="20" placeholder="写点什么" name="article" id="article-body" style="display:none;" id="article-body"></textarea>
+            </div>
+            <div class="editor">
+                <div id="div1" class="toolbar"></div>
+                <div style="padding: 5px 0; color: #ccc"></div>
+                <div id="div2" class="text"></div>
+            </div>
+            <button id="sub-btn" type="submit">发表</button>
+        </div>
+    </form>
+</div>
+<script type="text/javascript" src="/static/js/jquery-3.1.1.js"></script>
+<script type="text/javascript" src="/static/js/wangEditor.js"></script>
+<script type="text/javascript" src="/static/js/submit-article.js"></script>
