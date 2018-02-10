@@ -9,6 +9,7 @@ router.get('/isExist', function (req, res) {
     username: username
   }, function (err, user) {
     if (err) console.error(err);
+    res.set('Access-Control-Allow-Origin', '*');
     if (!user) {
       return res.send({
         isExist: false,
