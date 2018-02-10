@@ -39,12 +39,25 @@ router.get('/article\/[a-zA-Z0-9]+/', function (req, res){
         message: 'Can\'t found this article!'
       });
     }
-    res.render('article', {
-      title: article.title,
-      body: article.body,
-      layout: 'logined-main',
-      username: req.session.username
-    });
+    console.log(article);
+    if(req.session.isLogined){
+      res.render('article', {
+        title: article.title,
+        body: article.body,
+        author: article.author,
+        time: new Date(article.date).toLocaleDateString(),
+        layout: 'logined-main',
+        username: req.session.username,
+      });
+    }else{
+      res.render('article', {
+        title: article.title,
+        body: article.body,
+        author: article.author,
+        time: article.date,
+        layout: 'main'
+      });
+    }
   });
 });
 
@@ -66,7 +79,7 @@ router.post('/receiveArticle', function (req, res){
     path: '/article/' + Date.now()
   });
   article.save(function (err, article) {
-    if (err) return console.log(err);
+    if (err) return console.error(err);
     res.redirect(article.path);
   });
 });

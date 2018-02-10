@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -7,57 +8,94 @@
 	<title>写文章</title>
 	<link rel="stylesheet" type="text/css" href="/static/style/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="/static/style/main-layout.css">
-<!---->
-	{{{_sections.home-css}}}
-	{{{_sections.login-css}}}
-	{{{_sections.register-css}}}
-	{{{_sections.submit-article-css}}}
-	{{{_sections.article-css}}}
-<!---->
+	<!---->
+	{{{_sections.home-css}}} {{{_sections.login-css}}} {{{_sections.register-css}}} {{{_sections.submit-article-css}}} {{{_sections.article-css}}}
+	<!---->
 </head>
+
 <body>
 	<nav class="navbar navbar-default" id="my-nav">
 		<div class="container-fluid">
 			<div class="navbar-header">
-				<a href="/" class="navbar-brand"><img src="/static/image/jlx.png" alt="brand"></a>
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-toggle="collapse" data-target="#bs-collapse" aria-expanded="false">
+					<span class="sr-only">Toggle navgation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a href="/" class="navbar-brand">
+					<img src="/static/image/jlx.png" alt="brand">
+				</a>
 			</div>
-			<ul class="nav navbar-nav navbar-right" >
-				<li><a href="/write"><span class="glyphicon glyphicon-pencil"></span> 写点什么</a></li>
-            	<li><a href="/register"><span class="glyphicon glyphicon-user"></span> {{username}}</a></li>
-            	<li><a href="javascript: exit()"><span class="glyphicon glyphicon-off"></span> 退出</a></li>
-      		</ul>
+			<div class="collapse navbar-collapse" id="bs-collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li>
+						<a href="/write">
+							<span class="glyphicon glyphicon-pencil"></span>写点什么</a>
+					</li>
+					<li>
+						<a href="/register">
+							<span class="glyphicon glyphicon-user"></span> {{username}}</a>
+					</li>
+					<li class="dropdown">
+						<a href="#" class="drop-down" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+							更多
+							<span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu">
+							<li>
+								<a href="javascript: exit()">
+									<span class="glyphicon glyphicon-off"></span>注销</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
 		</div>
 	</nav>
 
 	{{{body}}}
 
 	<footer class="footer">
-			<div class="container-fluid">
-	    	<div class="row">
-	        	<div class="col-md-1">
-	            	<a href="#">
-	                	<img src="/static/image/jlx.png" alt="icon" class="my-brand-icon">
-	            	</a>
-	        	</div>
-	        	<div class="col-md-10 ">
-	            	<div class="row">
-	                	<ul>
-	                    	<li><a href="#">关于我</a></li>
-	                    	<li><a href="#">联系我</a></li>
-	                    	<li><a href="#">加我微信</a></li>
-	                    	<li><a href="#">帮助中心</a></li>
-	                	</ul>
-	            	</div>
-	            	<div class="row icp">
-	                <ul>
-	                    <li><a href="#">@2017- JonathanLee</a></li><li>/</li>
-	                    <li><a href="#">湘ICP备17021924号-1</a></li><li>/</li>
-	                    <li><a href="#">web学习之路</a></li><li>/</li>
-	                    <li><a href="#">举报电话</a></li>
-	                	</ul>
-	            	</div>
-	        	</div>
-	    	</div>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-xs-1">
+					<a href="#" class="brand">
+						<img src="/static/image/jlx.png" alt="icon" class="my-brand-icon">
+					</a>
+				</div>
+				<div class="col-xs-10 ">
+					<div class="row">
+						<ul>
+							<li>
+								<a href="#">关于我</a>
+							</li>
+							<li>
+								<a href="#">联系我</a>
+							</li>
+							<li>
+								<a href="#">微信</a>
+							</li>
+							<li>
+								<a href="#">Github</a>
+							</li>
+						</ul>
+					</div>
+					<div class="row icp">
+						<ul>
+							<li>
+								<a href="#">@2017- JonathanLee</a>
+							</li>
+							<li>
+								<a href="#">湘ICP备17021924号-1</a>
+							</li>
+							<li>
+								<a href="#">web学习之路</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
 		</div>
 	</footer>
 
@@ -66,18 +104,15 @@
 	<script type="text/javascript" src="/static/js/navbar.js"></script>
 	<script type="text/javascript">
 		// 用于删除cookie，退出当前账户
-			function exit(){
-				if(confirm("确定退出登录？")){
-					var date = new Date()
-					document.cookie += ";expires="+date.toGMTString()
-					location.reload(true)
-				}
+		function exit() {
+			if (confirm("确定退出登录？")) {
+				var date = new Date()
+				document.cookie += ";expires=" + date.toGMTString()
+				location.reload(true)
 			}
-	</script>
-
-	{{{_sections.home-js}}}
-	{{{_sections.login-js}}}
-	{{{_sections.register-js}}}
+		}
+	</script> {{{_sections.home-js}}} {{{_sections.login-js}}} {{{_sections.register-js}}}
 
 </body>
+
 </html>
