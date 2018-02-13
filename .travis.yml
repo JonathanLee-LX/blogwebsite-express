@@ -1,11 +1,13 @@
 language: node_js
+addons:
+  ssh_known_hosts: 111.230.239.56
 node_js: "-9.4.0"
-after_success: "-ssh root@111.230.239.56 -p 22 'cd /var/www/blogwebsite-express &&
+after_success: "- ssh root@111.230.239.56 -p 22 'cd /var/www/blogwebsite-express &&
   git pull && pm2 restart app'"
 before_install:
-- openssl aes-256-cbc -K $encrypted_f4b75d109fc1_key -iv $encrypted_f4b75d109fc1_iv
-  -in id_rsa.enc -out travis/id_rsa -d
--chmod 600 ~/.ssh/id_rsa 
--echo -e "Host 111.230.239.56\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
-script: "-npm run test"
-install: "-npm install"
+ - openssl aes-256-cbc -K $encrypted_f4b75d109fc1_key -iv $encrypted_f4b75d109fc1_iv
+   -in id_rsa.enc -out travis/id_rsa -d
+ - chmod 600 ~/.ssh/id_rsa 
+ - echo -e "Host 111.230.239.56\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
+script: "- npm run test"
+install: "- npm install"
