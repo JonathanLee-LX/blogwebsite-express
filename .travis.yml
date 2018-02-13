@@ -18,9 +18,7 @@ notifications:
     - 1150974628@qq.com
     on_success: always
     on_failure: always
-          
-script: "- npm run test"
-          
+                    
 after_success: 
   - ssh root@111.230.239.56 -p 22 "cd /var/www/blogwebsite-express && git pull && pm2 restart app"
 
