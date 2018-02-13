@@ -51,7 +51,10 @@ var store = new RedisStore({
 // 将静态文件的根目录设为 __dirname+'/public'
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use('/static', express.static(__dirname + '/public'));
-app.use(bodyParser());
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
+app.use(bodyParser.json());
 app.use(cookie_parser(credentials.cookieSecret));
 app.use(session({
   store: store,
@@ -63,6 +66,7 @@ app.use(session({
   },
   name: 'session_id',
   rolling: true, //强制每次响应都重新发送一个cookie，并重置cookie的maxAge属性，默认是false
+  saveUninitialized: false //默认为true，会在每次请求时，无论该请求是否带有一个存储session的cookie都会重新设置一个session的cookie
 }));
 
 app.use(index);
