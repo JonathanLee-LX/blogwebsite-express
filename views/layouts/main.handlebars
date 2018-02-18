@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -8,25 +9,48 @@
 	<link rel="stylesheet" type="text/css" href="/static/style/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="/static/style/main-layout.css">
 	<!---->
-		{{{_sections.home-css}}}
-		{{{_sections.login-css}}}
-		{{{_sections.register-css}}}
-		{{{_sections.submit-article-css}}}
-		{{{_sections.article-css}}}
+	{{{_sections.home-css}}} {{{_sections.login-css}}} {{{_sections.register-css}}} {{{_sections.submit-article-css}}} {{{_sections.article-css}}}
 	<!---->
 </head>
+
 <body>
 	<nav class="navbar navbar-default" id="my-nav">
-	    <div class="container-fluid">
-	        <div class="navbar-header">
-	            <a href="/" class="navbar-brand"><img src="/static/image/jlx.png" alt="brand"></a>
-	        </div>
-	        <ul class="nav navbar-nav navbar-right" >
-	            <li><a href="/write"><span class="glyphicon glyphicon-edit"></span> 写点什么</a></li>
-	            <li><a href="/login"><span class="glyphicon glyphicon-home"></span> 登录</a></li>
-	            <li><a href="/register"><span class="glyphicon glyphicon-list-alt"></span> 注册</a></li>
-	        </ul>
-	    </div>
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-toggle="collapse" data-target="#bs-collapse"
+				 aria-expanded="false">
+					<span class="sr-only">Toggle navgation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a href="/" class="navbar-brand">
+					<img src="/static/image/jlx.png" alt="brand">
+				</a>
+			</div>
+			<div class="collapse navbar-collapse" id="bs-collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li>
+						<a href="/write">
+							<span class="glyphicon glyphicon-edit"></span> 
+							<span>写点什么</span>
+						</a>
+					</li>
+					<li>
+						<a href="/login">
+							<span class="glyphicon glyphicon-home"></span> 
+							<span>登录</span>
+						</a>
+					</li>
+					<li>
+						<a href="/register">
+							<span class="glyphicon glyphicon-list-alt"></span> 
+							<span>注册</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
 	</nav>
 
 	{{{body}}}
@@ -34,12 +58,12 @@
 	<footer class="footer">
 		<div class="container-fluid">
 			<div class="row">
-				<div class="col-md-1">
-					<a href="#">
+				<div class="col-xs-1">
+					<a href="#" class="brand">
 						<img src="/static/image/jlx.png" alt="icon" class="my-brand-icon">
 					</a>
 				</div>
-				<div class="col-md-10 ">
+				<div class="col-xs-10 ">
 					<div class="row">
 						<ul>
 							<li>
@@ -76,11 +100,8 @@
 
 	<script type="text/javascript" src="/static/js/jquery-3.1.1.js"></script>
 	<script type="text/javascript" src="/static/js/bootstrap.js"></script>
-	<script type="text/javascript" src="/static/js/navbar.js"></script>
-
-	{{{_sections.home-js}}}
-	{{{_sections.login-js}}}
-	{{{_sections.register-js}}}
+	<script type="text/javascript" src="/static/js/navbar.js"></script> {{{_sections.home-js}}} {{{_sections.login-js}}} {{{_sections.register-js}}}
 
 </body>
+
 </html>
