@@ -43,6 +43,7 @@ app.engine('handlebars', hbs.engine);
 //app.set(name, value) 设置视图引擎'view engine', value为前面engine方法指定的引擎名，注意一定是字符串形式
 app.set('view engine', 'handlebars');
 var db = mongoose();
+//通过一个redis-client初始化一个redis存储对象
 var store = new RedisStore({
   client: client
 });
@@ -52,7 +53,7 @@ var store = new RedisStore({
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use('/static', express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded({
-  extended: true
+  extended: false
 }));
 app.use(bodyParser.json());
 app.use(cookie_parser(credentials.cookieSecret));
@@ -66,7 +67,7 @@ app.use(session({
   },
   name: 'session_id',
   rolling: true, //强制每次响应都重新发送一个cookie，并重置cookie的maxAge属性，默认是false
-  saveUninitialized: false //默认为true，会在每次请求时，无论该请求是否带有一个存储session的cookie都会重新设置一个session的cookie
+  saveUninitialized: false //默认为true，会在接收每次请求时，无论该请求是否带有一个存储session的cookie，都会重新设置一个session的cookie
 }));
 
 app.use(index);
