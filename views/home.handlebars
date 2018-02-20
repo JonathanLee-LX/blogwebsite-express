@@ -94,15 +94,26 @@
 </div> --}}
 <div class="container">
   <div class="row">
-    <div class="card-area col-md-9" id="article-list">
-      {{!-- card加载后存放在此 --}}
+    <div class="card-area col-md-9">
+      <div class="card-list" id="article-list">
+       {{!-- card加载后存放在此 --}}
+      </div>
+      <div class="load-btn">
+       <a class="btn btn-primary btn-block load-more" role="button" href="javascript:void(0)">更多</a>
+      </div>
+   </div>
+   <div class="tool-area col-md-3">
+      <a class="back-top" href="#">
+       <span class="glyphicon glyphicon-chevron-up"></span>
+       <span>返回顶部</span>
+      </a>
    </div>
   </div>
-   <a class="btn btn-primary btn-block load-more" role="button" href="javascript:void(0)">更多</a>
 </div>
 
 {{#section 'home-js'}}
 <script type="text/javascript" src="/static/js/slide.js"></script>
 <script type="text/javascript" src="/static/js/load-more.js"></script>
 <script type="text/javascript" src="/static/js/article-controller.js"></script> 
+<script type="text/javascript" src="/static/js/back-top.js"></script> 
 {{/section}}

@@ -4033,7 +4033,7 @@ UploadImg.prototype = {
             }
         }
 
-        editor.cmd.do('insertHTML', '<img src="' + link + '" style="max-width:100%;"/>');
+        editor.cmd.do('insertHTML', '<img src="' + link + '" style="max-width:100%;" data-jlx="img"/>');
 
         // 验证图片 url 是否有效，无效的话给出提示
         var img = document.createElement('img');

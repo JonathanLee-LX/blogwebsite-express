@@ -13,17 +13,41 @@ router.get('/article\/[a-zA-Z0-9]+\/praise/', function (req, res){
       res.status(404);
       return res.send({
         status: 'error',
-        message: 'Can\'t found this article'
+        message: 'Can\'t found this article.'
       });
     }
-    article.praise.count++;
-    res.send({
-      status: "ok",
-      count: article.praise.count
-    })
+    // 判断该用户是否已经点赞
+    var isVoted = article.praise.voters.some(function (voter, index){
+      if(voter === req.session.username){
+        // 将该用户从点赞用户数组中删除
+        console.log(article.praise.voters)
+        article.praise.voters.splice(index, 1);
+        console.log(article.praise.voters)
+        return true;
+      }
+    });
+    // 该用户已经点过赞了，取消上次的点赞
+    if(isVoted){
+      res.send({
+        status: 'ok',
+        type: -1,
+        count: --article.praise.count
+      });
+    }else{
+      // 该用户没有进行投票，可以进行投票
+      article.praise.voters.push(req.session.username);
+      article.praise.count++;
+      res.send({
+        status: "ok",
+        type: 1,
+        count: article.praise.count
+      })
+    }
+    // 保存该article对象
     article.save(function (err) {
       if (err) console.error(err);
     });
+
   });
 });
 
@@ -39,7 +63,6 @@ router.get('/article\/[a-zA-Z0-9]+/', function (req, res){
         message: 'Can\'t found this article!'
       });
     }
-    console.log(article);
     if(req.session.isLogined){
       res.render('article', {
         title: article.title,
@@ -74,6 +97,7 @@ router.post('/receiveArticle', function (req, res){
     comments: [],
     praise: {
       count: 0,
+      voters: [],
       path: '/article/' + Date.now() + '/praise',
     },
     path: '/article/' + Date.now()

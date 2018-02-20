@@ -1,5 +1,4 @@
-{{!-- 这个模板是用来渲染需要往客户端发送的文章概要数据 --}} 
-{{#each abstracts }}
+{{!-- 这个模板是用来渲染需要往客户端发送的文章概要数据 --}} {{#each abstracts }}
 <div class="card row">
   <div class="author">
     <a href="javascript:void(0)" class="avatar">
@@ -10,32 +9,51 @@
       <small>{{time}}</small>
     </span>
   </div>
-  <div class="abstract">
-    <div class="content col-md-9 col-xs-9">
-      <h3 class="title">
-        <a href={{path}} class="link">
-          <strong>{{{title}}}</strong>
-        </a>
-      </h3>
-      <p>{{{body}}}</p>
-    </div>
-    {{#if img}}
-    <div class="preview col-md-3 col-xs-3">
-      <a href="#" >
-      {{{img}}}
+  <div class="title">
+    <h2 class="">
+      <a href={{path}} class="link">
+        {{{title}}}
       </a>
-    </div>
+    </h2>
+  </div>
+  <div class="abstract">
+    {{#if img}}
+      <div class="preview col-md-3 col-xs-3">
+        <a href={{path}} class="a-img">{{{img}}}</a>
+      </div>
+      <div class="content col-md-9 col-xs-9">
+        <p>{{{text}}}</p>
+      </div>
+    {{else}}
+      <div class="content col-md-12 col-xs-12">
+        <p>{{{body}}}</p>
+      </div>
     {{/if}}
   </div>
   <div class="meta">
+
+    {{#if praise.isVoted}}
+    <a href={{praise.path}} class="tag praise is-active">
+      <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
+      <span class="count">{{praise.count}}</span>
+    </a>
+    {{else}}
     <a href={{praise.path}} class="tag praise">
       <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
-      <span class="badge">{{praise.count}}</span>
+      <span class="count">{{praise.count}}</span>
     </a>
+    {{/if}}
+
     <a href="javascript:void(0)" class="tag comment">
       <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
-      <span class="badge">{{comments}}</span>
+      <span class="count">{{comments}}</span>
     </a>
+
+    <a href={{path}} class="tag complete">
+      <span class="glyphicon glyphicon-menu-down"></span>
+      <span>阅读全文</span>
+    </a>
+
   </div>
 </div>
 {{/each}}

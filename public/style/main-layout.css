@@ -25,10 +25,6 @@ img {
 	z-index: 99999;
 }
 
-hr {
-	margin-top: 5px;
-}
-
 a:hover {
 	text-decoration: none;
 	color: teal;

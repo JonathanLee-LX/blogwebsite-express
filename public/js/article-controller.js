@@ -13,11 +13,12 @@ $(function (){
       url: url,
       method: 'GET',
       success: function(data){
-        $target.find('.badge').text(data.count);
+        $target.find('.count').text(data.count);
+        $target.toggleClass('is-active');
       },
       error: function (xhr, statusCode, error){
         console.error(error);
       }
     });
-  })
+  });
 })

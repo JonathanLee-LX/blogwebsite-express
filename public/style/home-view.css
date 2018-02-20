@@ -19,3 +19,29 @@
 	width: 70%;
 	margin-bottom: 10px;
 }
+
+.tool-area{
+	position: relative;
+}
+
+.back-top{
+	position: fixed;
+	bottom: 80px;
+	right: 40px;
+	display: inline-block;
+	width: 100px;
+	height: 40px;
+	line-height: 40px;
+	border: 1px solid #337ab7;
+	border-radius: 5px;
+	background-color: #fff;
+	color: #337ab7;
+	text-align: center;
+	display: none;
+}
+
+.back-top:hover{
+	background-color: #337ab7;
+	color: #fff;
+	border: 0;
+}

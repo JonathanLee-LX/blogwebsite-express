@@ -49,7 +49,7 @@ button:hover{
     filter: brightness(0.8);
 }
 
-// 把表情，图片链接，表格等面板设置为固定定位
+ /* 把表情，图片链接，表格等面板设置为固定定位 */
 .fixed-panel{
     position: fixed;
     top: 50%;

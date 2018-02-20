@@ -1,38 +1,38 @@
 // 使用ajax来获取新内容
 $(function(){
   $(".load-more").on('click', function(e){
-    $load()
+    $('.load-more').text('拼命加载中...');
+    $load();
   });
 
-  $(document).on('scroll', function (e){
-    if($(this).height() - $(this).scrollTop() === $(window).height())
+  $(document).on('scroll', _.debounce(function (e) {
+    if ($(this).height() - $(this).scrollTop() === $(window).height())
       $load();
-  })
+  }, 300, {'maxWait': 1200}))
 
-  // 分页加载，page记录当前第几页
-  var page = 1;
   var $load = function (){
-    $.ajax({
-      url: '/load-more',
-      method: 'GET',
-      data: {
-        msg: true,
-        page: page
-      },
-      success: function (data) {
-        if(data.end){
-          $('.info').remove();
-          var $info = $('<strong class=\"info\">已经到底了...</strong>');
-          return  $info.appendTo('#article-list').delay(3000).fadeOut(500);
+    var page = 1;
+    return function () {
+      $.ajax({
+        url: '/load-more',
+        method: 'GET',
+        data: {
+          msg: true,
+          page: page
+        },
+        success: function (data) {
+          if (data.end) {
+            return $('.load-more').text('别刷了,真的没有了...');
+          }
+          $("#article-list").append(data);
+          page++;
+        },
+        error: function (xhr, status, error) {
+          console.log(error.stack)
         }
-        $("#article-list").append(data);
-        page++;
-      },
-      error: function (xhr, status, error) {
-        console.log(error.stack)
-      }
-    })
-  }
+      })
+    }
+  }();
   // 载入页面的时候进行加载
   $load();
 })
