@@ -5,10 +5,10 @@ $(function(){
     $load();
   });
 
-  $(document).on('scroll', _.debounce(function (e) {
-    if ($(this).height() - $(this).scrollTop() === $(window).height())
-      $load();
-  }, 300, {'maxWait': 1200}))
+  // $(document).on('scroll', _.debounce(function (e) {
+  //   if ($(this).height() - $(this).scrollTop() === $(window).height())
+  //     $load();
+  // }, 300, {'maxWait': 1200}))
 
   var $load = function (){
     var page = 1;
