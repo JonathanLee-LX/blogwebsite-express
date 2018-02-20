@@ -4,6 +4,10 @@
 	width: 100%;
 } 
 
+.card-wrap{
+	margin-top: 50px;
+}
+
 .card-area{
 	margin-top: 30px;
 }

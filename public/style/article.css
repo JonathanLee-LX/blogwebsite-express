@@ -24,10 +24,13 @@
 }
 
 .article-container{
+    min-height: 800px;
+    padding: 20px 20px;
+}
+
+.article{
     box-shadow: 1px 1px 3px #f3f3f3;
     border: 1px solid #ddd;
     background-color: #fff;
     border-radius: 10px;
-    min-height: 800px;
-    padding: 20px 20px;
 }

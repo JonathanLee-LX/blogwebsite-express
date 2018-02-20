@@ -1,16 +1,21 @@
 {{#section 'article-css'}}
-    <link rel="stylesheet" type="text/css" href="/static/style/article.css"/>
-{{/section}}
+<link rel="stylesheet" type="text/css" href="/static/style/article.css" /> {{/section}}
 <div class="container article-container">
-    <div class="author">
-        <a href="javascript:void(0)" class="avatar">
-            <img src="/static/image/1_circle.jpg" alt="avatar" class="img-circle">
-        </a>
-        <a href="" class="nickname">{{author}}</a>
-        <span class="time">
-            <small>{{time}}</small>
-        </span>
+    <div class="row">
+        <div class="col-md-8 col-xs-12 article">
+            <div class="author">
+                <a href="javascript:void(0)" class="avatar">
+                    <img src="/static/image/1_circle.jpg" alt="avatar" class="img-circle">
+                </a>
+                <a href="" class="nickname">{{author}}</a>
+                <span class="time">
+                    <small>{{time}}</small>
+                </span>
+            </div>
+            <h2>{{{title}}}</h2>
+            <div>{{{body}}}</div>
+        </div>
+        <div class="col-md-4">
+        </div>
     </div>
-    <h3>{{{title}}}</h3>
-    <div>{{{body}}}</div>
 </div>

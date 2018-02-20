@@ -21,7 +21,7 @@ img {
 
 .navbar-fixed-top {
 	border-bottom: 1px solid #ccc;
-	box-shadow: 1px 1px 1px #f3f3f3;
+	box-shadow: 1px 1px 3px #b4b4b4;
 	z-index: 99999;
 }
 
