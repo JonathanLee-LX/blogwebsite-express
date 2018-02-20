@@ -1,6 +1,9 @@
-{{!-- 这个模板是用来渲染需要往客户端发送的文章概要数据 --}} {{#each abstracts }}
+{{!-- 这个模板是用来渲染需要往客户端发送的文章概要数据 --}} 
+
+
+{{#each abstracts }}
 <div class="card row">
-  <div class="author">
+  <div class="author ">
     <a href="javascript:void(0)" class="avatar">
       <img src="static/image/1_circle.jpg" alt="avatar" class="img-circle">
     </a>
@@ -9,8 +12,8 @@
       <small>{{time}}</small>
     </span>
   </div>
-  <div class="title">
-    <h2 class="">
+  <div class="title ">
+    <h2>
       <a href={{path}} class="link">
         {{{title}}}
       </a>
@@ -18,12 +21,12 @@
   </div>
   <div class="abstract">
     {{#if img}}
-      <div class="preview col-md-3 col-xs-3">
+      <div class="preview col-md-4 col-xs-12">
         <a href={{path}} class="a-img">{{{img}}}</a>
       </div>
-      <div class="content col-md-9 col-xs-9">
+      <div class="content col-md-8 col-xs-12">
         <p>{{{text}}}</p>
-      </div>
+      </div>  
     {{else}}
       <div class="content col-md-12 col-xs-12">
         <p>{{{body}}}</p>
