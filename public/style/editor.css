@@ -1,3 +1,6 @@
+.editor-container{
+    margin-top: 80px;
+}
 .editor{
   margin-top: 20px;
 }
@@ -19,9 +22,6 @@
     overflow-y: visible;
 }
 
-.article-container{
-    margin-top: 30px;
-}
 
 .isfixed{
     position: fixed;
