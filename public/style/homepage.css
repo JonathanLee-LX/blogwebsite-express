@@ -1,0 +1,151 @@
+img {
+  width: 100%;
+}
+
+.homepage{
+  box-shadow: 1px 2px 6px rgba(26, 26, 26, .3);
+}
+
+.profileheader {
+  height: 200px;
+  background-color: teal;
+  overflow: hidden;
+}
+
+.user-cover{
+  width: 100%;
+  height: 100%;
+}
+
+.btn-pri {
+  position: absolute;
+  top: 30px;
+  right: 20px;
+  border: 1px solid #0084ff;
+  color: #0084ff;
+  background-color: #fff;
+  transition: all .3s;
+}
+.btn-light{
+    position: absolute;
+    top: 30px;
+    right: 20px;
+  border: 1px solid #fff;
+  background-color: transparent;
+  color: #fff;
+    transition: all .3s;
+
+}
+
+.btn:hover{
+  background-color: #0084ff;
+  color: #fff;
+}
+.btn-light:hover{
+  background-color: rgba(0,0,0,.8);
+}
+
+.profile-main {
+  position: relative;
+  height: 200px;
+  background-color: #fff;
+}
+
+.avatarEditor {
+  padding: 0;
+  height: 200px;
+  width: 200px;
+  position: relative;
+  top: -30%;
+  box-shadow: 1px 2px 5px rgba(26, 26, 26, .5);
+}
+
+.avatarEditor .avatar {
+  background-color: #fff;
+  border-radius: 5px;
+  border: 5px solid #fff;
+}
+
+.avatarEditor .avatar img {
+  width: 100%;
+}
+
+.avatarEditor .mask{
+  background-color: rgba(0,0,0,.3);
+}
+
+.content {
+  height: 200px;
+  /* background-color: white; */
+  padding: 10px 20px;
+}
+
+.user .introduce {
+  margin-top: 30px;
+  font-size: 20px;
+  color: #8590a6;
+}
+
+.mask{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+  transition: opacity .4s;
+}
+.mask:hover{
+  opacity: 1;
+}
+.mask .camera {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+}
+
+.mask .info{
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+}
+
+.editor-modal{
+  background-color: rgba(0,0,0,.3);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+.edit-area {
+  position: relative;
+  height: 100%;
+  padding: 20px;
+  background-color: #fff;
+}
+.edit-area a{
+  position: absolute;
+  top: 10px;
+  right: -30px;
+  display: block;
+  color: #fff;
+  cursor: pointer;
+  font-size: 24px;
+  z-index: 9999;
+}
+a:hover{
+  text-decoration: none;
+  transform: rotate(360deg);
+  transition: transform .5s ease-in-out;
+}
+
+.control-area{
+  margin-top: 20px;
+}
+

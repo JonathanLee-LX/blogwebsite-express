@@ -1,18 +1,21 @@
- {{#section 'login-css'}}
+{{!-- 登录组件 --}}
+
+
+{{#section 'login-css'}}
 
 <link rel="stylesheet" style="text/css" href='/static/style/login-page.css' />
 
 <link rel="stylesheet" style="text/css" href="/static/style/loading.css">
 
- {{/section}} 
+{{/section}} 
  
-<div class="bg">
-</div>
+{{!-- <div class="bg">
+</div> --}}
 
 <div class="container row login-page">
     <div class=" login-area col-md-4 col-md-offset-4 col-xs-12">
         <a class="close-icon glyphicon glyphicon-remove"></a>
-        <div class="login-title">
+        <div class="login-ti">
             <h1>账号密码登录</h1>
         </div>
         <form action='/login' method="POST" id="login-form">

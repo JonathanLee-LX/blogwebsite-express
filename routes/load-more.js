@@ -3,12 +3,14 @@ var mongoose = require('mongoose');
 var cheerio = require('cheerio');
 var router = express.Router();
 var Article = mongoose.model('Article');
+var User = mongoose.model('User');
 
 router.get('/load-more', function (req, res) {
   var page = req.query.page || 1;
   var size = 8;
   var skipNum = (page - 1) * size;
-  Article.find({}).skip(skipNum).limit(size).exec(function (err, articles) {
+
+  Article.find({}).skip(skipNum).limit(size).populate('author').exec(function (err, articles) {
     if (err) return console.error(err);
     if (!articles.length) {
       return res.send({
@@ -34,23 +36,27 @@ router.get('/load-more', function (req, res) {
       //获取文本内容,限定221个字符
       var text = $.text().substring(0, 211) + '...';
 
+      // 检查该用户是否已经点赞
       var isVoted = article.praise.voters.some(function (voter, index) {
         if (voter === req.session.username) {
           return true;
         }
       });
-
-      article.time = article.date.toLocaleTimeString();
-      article.img = img;
-      article.text = text;
-      // isVoted表示该用户是否已经投过票了
-      article.praise.isVoted = isVoted ? isVoted : false;
-    })
+        
+          article.time = article.date.toLocaleTimeString();
+          article.img = img;
+          article.text = text;
+          // isVoted表示该用户是否已经投过票了
+          article.praise.isVoted = isVoted ? isVoted : false;
+          
+          console.log(article)
+    });
 
     res.render('card', {
       abstracts: articles,
-      layout: false
+      layout: false,
     });
+
   });
 });
 

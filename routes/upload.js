@@ -2,6 +2,8 @@ var express = require('express');
 var multer = require('multer');
 var mime = require('mime');
 var fs = require('fs');
+var userProfile = require('../lib/user-profile');
+var updateUserAvatar = userProfile.updateUserAvatar;
 
 var router = express.Router();
 
@@ -27,16 +29,22 @@ var upload_mix = multer({
 ])
 
 // 将上传的avatar图片进行重新命名
-var rename = function (req, res) {
+var rename = function (req, res, next) {
+  console.log('has received..')
   var file = req.file || req.files || req.files.fields
+  // 本地路径
   var oldname = './public/upload/avatar/' + req.file.filename
   var newname = oldname + '.' + mime.getExtension(req.file.mimetype)
+  // 外部路径
   var url = '/static/upload/avatar/' + req.file.filename + '.' + mime.getExtension(req.file.mimetype)
   fs.rename(oldname, newname, function (err) {
     if (err) throw new Error(err)
-    res.send({
-      url: url
-    })
+    // res.send({
+    //   url: url
+    // })
+    //将avatar的更改记录到数据库中
+    req.session.avatar = url;
+    next();    
   })
 }
 
@@ -58,7 +66,7 @@ var rename_photo = function (req, res) {
   });
 }
 
-router.post('/upload_avatar', upload_avatar, rename);
+router.post('/upload_avatar', upload_avatar, rename, updateUserAvatar);
 router.post('/upload_photo', upload_photo, rename_photo);
 router.post('/upload_mix', upload_mix, rename);
 module.exports = router;

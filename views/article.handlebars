@@ -5,9 +5,9 @@
         <div class="col-md-8 col-xs-12 article">
             <div class="author">
                 <a href="javascript:void(0)" class="avatar">
-                    <img src="/static/image/1_circle.jpg" alt="avatar" class="img-circle">
+                    <img src={{author.avatar}} alt="avatar" class="img-circle">
                 </a>
-                <a href="" class="nickname">{{author}}</a>
+                <a href="" class="nickname">{{author.username}}</a>
                 <span class="time">
                     <small>{{time}}</small>
                 </span>
@@ -15,7 +15,43 @@
             <h2>{{{title}}}</h2>
             <div>{{{body}}}</div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4 fixed-panel">
+            {{!-- <ul class="list-group">
+                <li class="list-group-item">Hello World!!</li>
+                <li class="list-group-item">Hello World!!</li>
+                <li class="list-group-item">Hello World!!</li>
+                <li class="list-group-item">Hello World!!</li>
+            </ul> --}}
         </div>
+
+        <div class="col-md-8 col-xs-12 comment">
+            <div class="input-group">
+                <input type="text" class="form-control" name="comment" placeholder="正在开发中，敬请期待！" id="comment-input" disabled>
+                <div class="input-group-btn">
+                    <button class="btn btn-primary" type="button" id="comment-btn" disabled>评论</button>
+                </div>
+            </div>
+            <div class="comment-area">
+                <ul class="list-group">
+                    {{#each comments}}
+                    <li class="list-group-item">
+                        <div class="author">
+                            <a href="javascript:void(0)" class="avatar">
+                                <img src={{user.avatar}} alt="avatar" class="img-circle">
+                            </a>
+                            <a href="" class="nickname">{{user.username}}</a>
+                            <span class="time">
+                                <small>{{time}}</small>
+                            </span>
+                        </div>
+                        <div class="comment-text">
+                            <p>{{text}}</p>
+                        </div>
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+
     </div>
 </div>

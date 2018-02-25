@@ -8,7 +8,16 @@ router.get('/login', function (req, res){
   if (req.session.isLogined) {
     return res.redirect('/')
   }
-  res.render('login')
+ 
+  if(req.query.type === 1){
+    return res.render('login-comp',{
+      layout: false
+    })
+  }
+  
+  res.render('login', {
+    layout: 'no-nav'
+  })
 });
 
 router.post('/login', function (req, res){

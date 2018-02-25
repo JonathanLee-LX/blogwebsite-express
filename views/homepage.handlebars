@@ -1,0 +1,73 @@
+{{#section 'homepage-css'}}
+
+<link rel='stylesheet' type="text/css" href="/static/style/homepage.css"> 
+<link rel='stylesheet' type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/cropper/3.1.4/cropper.css"> 
+
+{{/section}}
+
+<div class="row">
+  <div class="col-md-8 col-md-offset-2 homepage">
+
+  <div class="profileheader">
+    <div class="user-cover">
+      <img src={{cover}} alt="cover" class="cover">
+    </div>
+    <button class="btn btn-light" id="addCover">
+      <span class="glyphicon glyphicon-camera"></span>
+      添加封面
+    </button>
+  </div>
+  <div class="profile-main">
+    <div class="col-md-3 avatarEditor">
+      <div class="avatar">
+        <img src={{avatar}} alt="avatar">
+      </div>
+      <div class="mask">
+        <div class="camera">
+          <div>
+            <svg class="Zi Zi--Camera UserAvatarEditor-cameraIcon" fill="currentColor" viewBox="0 0 24 24" width="36" height="36">
+              <path d="M20.094 6S22 6 22 8v10.017S22 20 19 20H4.036S2 20 2 18V7.967S2 6 4 6h3s1-2 2-2h6c1 0 2 2 2 2h3.094zM12 16a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7zm0 1.5a5 5 0 1 0-.001-10.001A5 5 0 0 0 12 17.5zm7.5-8a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"
+                fill-rule="evenodd"></path>
+            </svg>
+          </div>
+          <div class="info">修改我的头像</div>
+          <input type="file" accept="image/png,image/jpeg" style="display: none;"  name="avatar" id="upload-avatar">
+        </div>
+      </div>
+    </div>
+    <div class="col-md-9 content">
+      <div class="user">
+        <h1>JonathanLee</h1>
+        <p class="introduce">你是谁，从哪来，要到哪去？</p>
+      </div>
+    </div>
+    <button class="btn btn-pri" id="editInfo">
+      <span class="glyphicon glyphicon-pencil"></span>
+      编辑资料
+    </button>
+  </div>
+
+  {{!-- 图片裁剪组件 --}}
+  <div class="editor-modal">
+        <div class="col-md-6 col-md-offset-3 edit-area">
+          <a class="close-icon glyphicon glyphicon-remove"></a>
+          <div class="img-area">
+            <img src="/static/image/1.jpg" alt="moutain" id="tocut-image">
+          </div>
+          {{!-- <div id="preview"></div> --}}
+          <div class="control-area">
+           <button id='crop-btn' class="btn btn-primary btn-block" type="button">上传</button>
+          </div>
+          <div class="upload-progress"></div>
+        </div>
+  </div>
+ 
+  </div>
+</div>
+
+{{#section 'homepage-js'}}
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/cropper/3.1.4/cropper.js"></script> 
+<script type="text/javascript" src="/static/js/homepage.js"></script> 
+
+{{/section}}

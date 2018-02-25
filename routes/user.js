@@ -23,4 +23,24 @@ router.get('/isExist', function (req, res) {
   });
 })
 
+router.get('/people/avatar', function (req, res) {
+  User.findOne({
+    username: req.session.username
+  }, function (err, user) {
+    if (err) console.error(err);
+    if (!user) {
+      res.status(404);
+      return res.send({
+        status: 'error',
+        msg: 'Can\'t found this user'
+      })
+    }
+    // 將用戶的avatar链接发给客户端
+    res.send({
+      url: user.avatar
+    });
+  });
+});
+
+
 module.exports = router;

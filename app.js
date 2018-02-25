@@ -22,6 +22,7 @@ var article = require('./routes/article');
 var load_more = require('./routes/load-more'); 
 var upload = require('./routes/upload'); 
 var user = require('./routes/user'); 
+var homepage = require('./routes/homepage'); 
 
 var app = express();
 
@@ -78,6 +79,7 @@ app.use(article);
 app.use(upload);
 app.use(user);
 app.use(load_more);
+app.use(homepage);
 
 
 var debug = require('debug')('demo:server');

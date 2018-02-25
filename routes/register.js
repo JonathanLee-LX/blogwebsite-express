@@ -5,13 +5,16 @@ var mongoose = require('mongoose');
 var User = mongoose.model('User');
 
 router.get('/register', function (req, res){
-  res.render('register');
+  res.render('register',{
+    layout: 'no-nav'
+  });
 });
 
 router.post('/register', function (req, res){
   var user = new User({
     username: req.body.username,
-    password: req.body.password
+    password: req.body.password,
+    homepage: '/people/'+encodeURI(req.body.username)
   });
   user.save(function (err) {
     if (err){

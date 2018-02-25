@@ -1,14 +1,15 @@
 var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
 
 var ArticleSchema = new mongoose.Schema({
   title: String,  // 文章标题
   body: String, //  文章主体内容
-  author: String,
+  author: { type: Schema.Types.ObjectId, ref: 'User'}, // 对象形式的作者
   date: Date,
   comments: [{
-    body: String,
-    date: Date
-  }],
+    type: Schema.Types.ObjectId,
+    ref: 'Comment'
+   }],
   praise: {
     count: Number, // 点赞数
     voters: Array, // 投票者
